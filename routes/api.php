@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -22,3 +23,6 @@ Route::get('/Users', [UserController::class, 'GetUsers']);
 Route::post('/AddUsers', [UserController::class, 'AddUser']);
 Route::get('/User/{id}', [UserController::class, 'GetUser']);
 Route::put('/UpdateUsers/{id}', [UserController::class, 'UpdateUser']);
+
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
